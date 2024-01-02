@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{besnote}
+%\input{define.tex}
+\usepackage{besphysics}
+\usepackage{besrefblk}
+
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{overpic}
+\usepackage{authblk}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{colortbl}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{bm}% bold math
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{units}
+\usepackage{float}
+\usepackage{hyperref}
+
+\usepackage[style=phys, articletitle=false, biblabel=brackets]{biblatex}
+\addbibresource{reference.bib}
+
+\uchyph=0
+\lefthyphenmin=2
+\righthyphenmin=2
+
+\renewcommand\figurename{\rm Fig.}
+\renewcommand\tablename{\rm Tab.}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+
+
+
+\title{Measurement of transverse polarization of $\Lambda_c^+$ through amplitude analysis of $\Lambda_c^+ \to p K^-\pi^+$}
+\author[a]{Kun-Lin~Han}
+\author[b]{Xin-Hai~Xie}
+\author[a]{Yi~Jiang}
+\author[a]{Hao~Sun}
+\author[c]{Ying~Liu}
+\author[a]{\\Xiao-Rui~Lyu}
+\author[b]{Ya-Jun~Mao}
+\author[a]{Wei-Bin~Qian}
+\author[c]{Pei-Rong~Li}
+\author[a]{Yang-Heng~Zheng}
+
+\affil[a]{\it University of Chinese Academy of Sciences}
+\affil[b]{\it Peking University}
+\affil[c]{\it Lanzhou University}
+
+
+\refmember[d]{Cong~Geng (Chair)}
+\refmember[e]{Hong-Fei~Shen}
+\refmember[e]{Ze-Hui~Lu}
+\refaffil[d]{\it Sun Yat-sen University}
+\refaffil[e]{\it Institute of High Energy Physics, CAS}
+
+\refeditor[g]{Editor A}
+\refeditor[h]{Editor B}
+
+\refbffil[g]{\it Uni. G}
+\refbffil[h]{\it Uni. H}
+
+
+\besmemoversion{1.4}
+
+\besmemoid{794}
+
+\abstracttext{
+Based data samples collected at thirteen center-of-mass energies ranging from 4.600 to 4.951$\gev/c^2$, obtained with the BESSIII detector at BEPCII, we present a measurement of $\Lambda_c^+$ transverse polarization in the process $e^+e^- \to \Lambda_c^+\Lambda_c^-$, through an amplitude analysis of the $\Lambda_c^+ \to p K^- \pi^+$ decay. The angular distribution parameter $\alpha_0$ and the phase angle difference $\Delta_0$ in the two independent helicity amplitudes in $e^+e^- \to \Lambda_c^+\Lambda_c^-$ are determined at each energy point. A significant polarization of $\Lambda_c^+$ is observed, particularly at a center-of-mass energy of $\sqrt{s} = 4.682\gev/c^2$. The values obtained for $\alpha_0$ and $\Delta_0$ are found to be consistent with previous results from BESIII studies.
+}
+
+\begin{document}
+\setlength{\baselineskip}{0.7cm}
+\tableofcontents
+
+\clearpage
+\setrunninglinenumbers
+\begin{linenumbers}
+
+\input{1_introduction.tex}
+\input{2_detector.tex}
+\input{3_sample.tex}
+\input{4_selections.tex}
+\input{5_pwa.tex}
+\input{6_angular.tex}
+\input{7_summary.tex}
+
+\clearpage
+
+\printbibliography
+
+\newpage
+\appendix
+\section*{APPENDIX}  % use *-form to suppress numbering
+\input{app2_mc_statistics.tex}
+\input{app1_bkg.tex}
+\input{app3_error.tex}
+\input{app4_resolution.tex}
+\input{app5_io.tex}
+\input{app6_lcst.tex}
+\input{app7_isr.tex}
+\clearpage
+\end{linenumbers}
+
+\end{document}

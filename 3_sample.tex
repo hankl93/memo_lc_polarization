@@ -1,0 +1,39 @@
+\clearpage
+\section{Data and MC samples}
+\label{sec:sample}
+This analysis uses a combined data sample with a integrated luminosity of 6.4 fb$^{-1}$ collected at 13 c.m. energy points from $\sqrt{s}=4.600~\gev$ to 4.951~$\gev$, which are reconstructed under BOSS version of 7.0.6 and 7.0.7. More details about these data samples are listed in Table~\ref{tab:datainfo}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{The c.m. energy ($E_{\rm cms}$), the integrated luminosity, and BOSS version of the data samples in this analysis~\cite{BESIII:2015qfd,BESIII:2015zbz,BESIII:2022dxl,BESIII:2022ulv}.}
+    \begin{tabular}{cccc}\hline\hline
+        Sample  &  $\sqrt{s}$ (MeV) & $\mathcal{L}_{\rm int}$ (pb$^{-1}$)  & BOSS version \\\hline
+        4600    & 4599.53 $\pm$ 0.07 $\pm$ 0.74 & 586.9 $\pm$ 0.1 $\pm$ 3.9 & \multirow{7}{4em}{7.0.6}\\
+        4612    & 4611.86 $\pm$ 0.12 $\pm$ 0.30 & 103.65 $\pm$ 0.05 $\pm$ 0.55 \\
+        4626    & 4628.00 $\pm$ 0.06 $\pm$ 0.32 & 521.53 $\pm$ 0.11 $\pm$ 2.76 \\
+        4640    & 4640.91 $\pm$ 0.06 $\pm$ 0.29 & 551.65 $\pm$ 0.12 $\pm$ 2.92 \\
+        4660    & 4661.24 $\pm$ 0.06 $\pm$ 0.29 & 529.43 $\pm$ 0.12 $\pm$ 2.81\\
+        4680    & 4681.92 $\pm$ 0.08 $\pm$ 0.29 & 1667.39 $\pm$ 0.21 $\pm$ 8.84\\
+        4700    & 4698.82 $\pm$ 0.10 $\pm$ 0.36 & 535.54 $\pm$ 0.12 $\pm$ 2.84 \\\hline
+        4740    & 4739.70 $\pm$ 0.20 $\pm$ 0.30 & 163.87 $\pm$ 0.07 $\pm$ 0.87 & \multirow{6}{4em}{7.0.7}\\
+        4750    & 4750.05 $\pm$ 0.12 $\pm$ 0.29 & 366.55 $\pm$ 0.10 $\pm$ 1.94 \\
+        4780    & 4780.54 $\pm$ 0.12 $\pm$ 0.30 & 511.47 $\pm$ 0.12 $\pm$ 2.71 \\
+        4840    & 4843.07 $\pm$ 0.20 $\pm$ 0.31 & 525.16 $\pm$ 0.12 $\pm$ 2.78 \\
+        4920    & 4918.02 $\pm$ 0.34 $\pm$ 0.34 & 207.82 $\pm$ 0.08 $\pm$ 1.10\\
+        4950    & 4950.93 $\pm$ 0.36 $\pm$ 0.38 & 159.28 $\pm$ 0.07 $\pm$ 0.84\\
+        \hline\hline
+    \end{tabular}
+    \label{tab:datainfo}
+\end{table}
+
+Simulated samples are produced using a \textsc{Geant4}-based~\cite{GEANT4:2002zbu} Monte Carlo (MC) packages, which includes the geometric descriptions of the BESIII detector~\cite{Liang:2009zzb,Huang:2022wuo} and detector response. The beam-energy spread and initial-state radiation (ISR) in the $e^+e^-$ annihilation are simulated with the \textsc{KKMC} generator~\cite{Jadach:2000ir} in the MC samples. The final-state radiation (FSR) from the charged particles are modeled using \textsc{PHOTOS}~\cite{Richter-Was:1992hxq}. Three kinds of MC samples are used in ths analysis as described below:
+\begin{itemize}
+    \item Cocktail MC samples:
+    \begin{itemize}
+        \item Inclusive $\lcp\lcm$ MC samples, which simulate the production of $\lcp\lcm$ pairs. The cross section of $e^+e^- \to \lcp\lcm$ process is based on the analysis of Ref~\cite{Wang:memo}, and the subsequent decay modes of $\lcp(\lcm)$ are inclusive using the branching fractions (BFs) taken from the PDG~\cite{Workman:2022ynf}. The integrated luminosity is 40 times larger than that of data. These samples are used to study the background contribution from $\lcp\lcm$ pair production in data. 
+        \item Inclusive hadron MC samples, which includes open-charmed mesons, ISR production of vector charmonium(-like) states and continuum processes. The known decay modes are modelled with \textsc{Evtgen}~\cite{Lange:2001uf,Ping:2008zz} using the BFs taken from the PDG~\cite{Workman:2022ynf}. The remaining unknown decays are simulated with \textsc{LUNDCHARM}~\cite{Chen:2000tv,Yang:2014vra}. The integrated luminosity is 10 times larger than that of data. These samples are used to study the background contribution from non-$\lcp\lcm$ pair production in data. 
+    \end{itemize}
+    \item PHSP signal MC samples, in which the signal process $\lcp \to pK^-\pi^+$ is generated with a uniform phase-space (PHSP) distribution and $\lcm$ decays into invisible particle which does not interact with the detector. 200K signal MC events are generated at each energy point, except for 400K events at $\sqrt{s} = 4.682~\gev$ due to its large integrated luminosity. The PHSP signal MC samples are used in the MC integration part to construct the likelihood of the amplitude analysis with detection efficiencies automatically taken into account. The effects of MC statistics are studied and found to be small in the amplitude analysis, documented in Appendix~\ref{app:mc_statistics}.
+    %The numbers of selected PHSP signal are at least 20 times larger than those of data at each energy point.
+    %\item PWA signal MC samples, in which events of $\lcp \to pK^-\pi^+$ are generated following the results of PWA fit,
+\end{itemize}

@@ -1,0 +1,69 @@
+\section{Effects of statistics of PHSP MC samples}
+\label{app:mc_statistics}
+
+The PHSP signal MC samples are used in the MC integration part to construct the likelihood of the amplitude analysis with detection efficiencies automatically taken into account. The sufficient size of PHSP MC samples is expected to have negligible effects comparing to the statistical uncertainty of data. In practice, the size of PHSP MC samples should be carefully considered due to the complexness of amplitude model and memory limit of GPU machines. Amplitude fit is hard to success and will take longer time with larger size of PHSP MC samples.
+Amplitude analysis is repeated using increased size of PHSP signal MC samples with a factor of 2. The obtained polarization parameters and FF are compared to the nominal ones, listed in Table~\ref{tab:mc_stat_comp_1} and Table~\ref{tab:mc_stat_comp_2}, respectively. The mean values of the parameters are slightly changed, but still within 1$\sigma$ of the statistical uncertainties. Most of the errors values are the same for these two fits. In conclusion, the dominant component in the obtained error values comes from the data statistics, and PHSP MC statistics do not have significant effects. 
+
+Additionally, we perform IO check with independent generated signal toy and PHSP MC samples with the same sizes in the nominal fit. The standard deviation of the pull distributions is used to correct the nominal errors as shown in Eq.~\ref{eq:IO_corr}. The corrected error is used to calculate the fit bias, which include the potential effects of the PHSP MC statistics. 
+
+\begin{table}[H]
+    \centering 
+    \caption{Comparison of polarization parameters between nominal and alternative fit with larger size of PHSP signal MC samples.}
+    \label{tab:mc_stat_comp_1}
+\begin{tabular}{c|c|c}
+\hline\hline
+Parameter & Nominal & Alternative \\\hline
+$\alpha_{0,4600}$ & -0.249 $\pm$ 0.036 & -0.241 $\pm$ 0.036 \\
+$\alpha_{0,4612}$ & -0.243 $\pm$ 0.092 & -0.251 $\pm$ 0.091 \\
+$\alpha_{0,4626}$ & -0.191 $\pm$ 0.042 & -0.178 $\pm$ 0.043 \\
+$\alpha_{0,4640}$ & -0.083 $\pm$ 0.045 & -0.082 $\pm$ 0.045 \\
+$\alpha_{0,4660}$ & -0.009 $\pm$ 0.050 & -0.005 $\pm$ 0.050 \\
+$\alpha_{0,4680}$ & 0.116 $\pm$ 0.032 & 0.118 $\pm$ 0.033 \\
+$\alpha_{0,4700}$ & 0.318 $\pm$ 0.069 & 0.328 $\pm$ 0.070 \\
+$\alpha_{0,4740}$ & 0.421 $\pm$ 0.159 & 0.393 $\pm$ 0.157 \\
+$\alpha_{0,4750}$ & 0.421 $\pm$ 0.104 & 0.388 $\pm$ 0.102 \\
+$\alpha_{0,4780}$ & 0.167 $\pm$ 0.077 & 0.172 $\pm$ 0.077 \\
+$\alpha_{0,4840}$ & 0.334 $\pm$ 0.107 & 0.340 $\pm$ 0.107 \\
+$\alpha_{0,4914}$ & 0.697 $\pm$ 0.196 & 0.685 $\pm$ 0.195 \\
+$\alpha_{0,4946}$ & 0.447 $\pm$ 0.215 & 0.432 $\pm$ 0.213 \\
+$\sin\Delta_{0,4600}$ & -0.224 $\pm$ 0.084 & -0.195 $\pm$ 0.084 \\
+$\sin\Delta_{0,4612}$ & -0.463 $\pm$ 0.211 & -0.452 $\pm$ 0.207 \\
+$\sin\Delta_{0,4626}$ & -0.244 $\pm$ 0.099 & -0.237 $\pm$ 0.098 \\
+$\sin\Delta_{0,4640}$ & -0.438 $\pm$ 0.096 & -0.389 $\pm$ 0.095 \\
+$\sin\Delta_{0,4660}$ & -0.515 $\pm$ 0.099 & -0.544 $\pm$ 0.099 \\
+$\sin\Delta_{0,4680}$ & -0.425 $\pm$ 0.064 & -0.434 $\pm$ 0.064 \\
+$\sin\Delta_{0,4700}$ & -0.585 $\pm$ 0.135 & -0.615 $\pm$ 0.136 \\
+$\sin\Delta_{0,4740}$ & 0.281 $\pm$ 0.298 & 0.307 $\pm$ 0.288 \\
+$\sin\Delta_{0,4750}$ & -0.424 $\pm$ 0.210 & -0.447 $\pm$ 0.201 \\
+$\sin\Delta_{0,4780}$ & -0.433 $\pm$ 0.149 & -0.422 $\pm$ 0.148 \\
+$\sin\Delta_{0,4840}$ & -0.429 $\pm$ 0.217 & -0.492 $\pm$ 0.219 \\
+$\sin\Delta_{0,4914}$ & 0.351 $\pm$ 0.446 & 0.364 $\pm$ 0.434 \\
+$\sin\Delta_{0,4946}$ & -0.223 $\pm$ 0.405 & -0.239 $\pm$ 0.393 \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering 
+    \caption{Comparison of FF between nominal and alternative fit with larger size of PHSP signal MC samples.}
+    \label{tab:mc_stat_comp_2}
+\begin{tabular}{c|c|c}
+\hline\hline
+Resonance & Nominal (\%) & Alternative (\%) \\\hline
+$\Delta(1232)^{++}$ & 27.32$\pm$1.03 & 26.86$\pm$1.02\\
+$\Delta(1600)^{++}$ & 7.69$\pm$2.01 & 7.70$\pm$1.91\\
+$\Delta(1600)^{++}$ & 5.43$\pm$1.88 & 5.34$\pm$1.72\\
+$\Delta(1700)^{++}$ & 12.77$\pm$1.41 & 12.51$\pm$1.44\\
+$\bar{K}_{0}^{*}(1430)$ & 13.67$\pm$2.61 & 13.77$\pm$2.64\\
+$\bar{K}_{0}^{*}(700)$ & 2.90$\pm$0.67 & 2.61$\pm$0.61\\
+$\bar{K}^{*}(892)$ & 24.96$\pm$0.98 & 24.45$\pm$0.99\\
+$\Lambda(1405)$ & 4.34$\pm$1.08 & 4.06$\pm$1.03\\
+$\Lambda(1520)$ & 1.11$\pm$0.17 & 1.20$\pm$0.18\\
+$\Lambda(1600)$ & 5.56$\pm$1.15 & 5.35$\pm$1.11\\
+$\Lambda(1670)$ & 1.68$\pm$0.26 & 1.66$\pm$0.26\\
+$\Lambda(1690)$ & 1.07$\pm$0.26 & 1.04$\pm$0.26\\
+$\Lambda(2000)$ & 5.93$\pm$0.51 & 6.03$\pm$0.52\\\hline 
+Sum & 114.43$\pm$4.67 & 112.58$\pm$4.56\\
+\hline\hline
+\end{tabular}
+\end{table}
