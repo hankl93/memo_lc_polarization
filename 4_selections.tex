@@ -49,35 +49,36 @@ The beam-constrained mass, denoted as $\mbc$, is defined by $\mbc = \sqrt{\ebeam
 \subsection{ST signal yields}
 \label{sec:st_yields}
 
-Extended unbinned maximum likelihood fits are conducted to extract the single-tag (ST) signal yields and purity from the $\mbc$ distributions across all energy points. In the fit, the signal shape is derived from the kernel-estimated non-parametric shape~\cite{Cranmer:2000du} of the phase space (PHSP) signal MC samples. To account for the discrepancies between data and MC simulations, a Gaussian function with adjustable parameters is convolved with the signal shape. For energy points below $\sqrt{s} = 4.740\gev/c^2$, the background shape is described by the ARGUS~\cite{Djouadi:1989hh} function, defined as follows:
+Extended unbinned maximum likelihood fits are conducted to extract the single-tag (ST) signal yields and purity from the $\mbc$ distributions across all energy points. In the fit, %the signal shape is derived from the kernel-estimated non-parametric shape~\cite{Cranmer:2000du} of the invisible PHSP signal MC samples. 
+the signal shape is extracted from the invisible PHSP signal MC samples using RooKeysPdf tool. To account for the discrepancies between data and MC simulations, a Gaussian function with adjustable parameters is convolved with the signal shape. For energy points below $\sqrt{s} = 4.740\gev/c^2$, the background shape is described by the ARGUS~\cite{Djouadi:1989hh} function, defined as follows:
 \begin{equation}
 P_{\rm bkg}(\mbc,E_0,c,p) = \mbc \left(1 - \left(\frac{\mbc}{E_0}\right)^2 \right)^p \times e^{c \left(1-\frac{\mbc}{E_0}\right)^2},
 \end{equation}
-where $E_0$ represents the endpoint of $\mbc$ and is fixed at the beam energy. The parameters $p$ and $c$ correspond to the power parameter and the scale factor, respectively. The default value for $p$ is set to 0.5 and is held fixed, while $c$ is allowed to vary in the fit. For the remaining points, the $\mbc$ distributions have cutoff points at approximately 2.4$\gev/c^2$ due to %the $\dE$ requirements. 
-an additional cut $|M(pK^-\pi^+) - m_{\lcp}| < 0.085\gev/c^2$, where $M(pK^-\pi^+)$ denotes the reconstructed invariant mass of $pK^-\pi^+$ and $m_{\lcp}$ represents the nominal mass value of $\lcp$ in PDG.
-The fit region is narrowed to (2.25, 2.34)$\gev/c^2$ and a second-order Chebyshev polynomial function is employed to model the background shape. The overall probability density function (PDF) is parameterized as the summation of signal and background components. The $\mbc$ signal and sideband regions are determined to be (2.282, 2.291) and (2.25, 2.27) $\gev/c^2$, respectively. The fit results are visualized in Figure~\ref{fig:fit_mbc}. Within the $\mbc$ signal region, the background fraction ($f_{\rm bkg}$) is determined using the equation $f_{\rm bkg} = n_{\rm bkg}/(n_{\rm sig} + n_{\rm bkg})$, where $n_{\rm sig}$ and $n_{\rm bkg}$ denote the event yields for the signal and background components, respectively. 
+where $E_0$ represents the endpoint of $\mbc$ and is fixed at the beam energy. The parameters $p$ and $c$ correspond to the power parameter and the scale factor, respectively. The default value for $p$ is set to 0.5 and is held fixed, while $c$ is allowed to vary in the fit. For the remaining points, the $\mbc$ distributions have cutoff points at approximately 2.4$\gev/c^2$ due to the applied $\dE$ requirements.
+%an additional cut $|M(pK^-\pi^+) - m_{\lcp}| < 0.085\gev/c^2$, where $M(pK^-\pi^+)$ denotes the reconstructed invariant mass of $pK^-\pi^+$ and $m_{\lcp}$ represents the nominal mass value of $\lcp$ in PDG.
+The fit region is narrowed to (2.25, 2.34)$\gev/c^2$ and a second-order Chebyshev polynomial function is employed to model the background shape. The overall probability density function (PDF) is parameterized as the summation of signal and background components. The $\mbc$ signal and sideband regions are determined to be (2.282, 2.291) and (2.25, 2.27) $\gev/c^2$, respectively. The fit results are illustrated in Figure~\ref{fig:fit_mbc}. Within the $\mbc$ signal region, the background fraction ($f_{\rm bkg}$) is determined using the equation $f_{\rm bkg} = n_{\rm bkg}/(n_{\rm sig} + n_{\rm bkg})$, where $n_{\rm sig}$ and $n_{\rm bkg}$ denote the event yields for the signal and background components, respectively. 
 The uncertainties associated with the background fractions are computed using the formula:
 \begin{equation}
-    \sigma_{\rm bkg} = \sqrt{(1-2*f_{\rm bkg})n_{\rm bkg} + f_{\rm bkg}^2(n_{\rm sig} + n_{\rm bkg})}.
+   % \sigma_{\rm bkg} = \sqrt{(1-2*f_{\rm bkg})n_{\rm bkg} + f_{\rm bkg}^2(n_{\rm sig} + n_{\rm bkg})}.
+   \sigma_{\rm bkg} = \sqrt{f_{\rm bkg}(1-f_{\rm bkg})/(n_{\rm sig} + n_{\rm bkg})}.
 \end{equation}
-The signal purities are determined as $f_{\rm sig} = 1 - f_{\rm bkg}$, and are generally larger than 90\% to ensure a reliable amplitude analysis.
-The fit results within $\mbc$ signal region are summarized in Table~\ref{tab:fit_mbc_results}.
+The signal purities are determined as $f_{\rm sig} = 1 - f_{\rm bkg}$. We find the signal purities are generally larger than 90\% for all energy points, that ensures a reliable amplitude analysis. The fit results within $\mbc$ signal region are summarized in Table~\ref{tab:fit_mbc_results}.
 
 \begin{figure}\centering
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4600.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4612.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4626.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4640.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4660.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4680.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4700.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4740.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4750.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4780.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4840.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4914.pdf}
-    \includegraphics[width=0.24\textwidth]{figure/fit_mbc/fit_mBC_data4946.pdf}
-    \caption{Fit results on $\mbc$ distributions for each energy point. The two blue vertical lines indicate the $\mbc$ signal region, and two red vertical lines indicate the $\mbc$ sideband region.}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4600_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4612_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4626_1001.pdf}\\
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4640_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4660_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4680_1001.pdf}\\
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4700_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4740_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4750_1001.pdf}\\
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4780_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4840_1001.pdf}
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4914_1001.pdf}\\
+    \includegraphics[width=0.32\textwidth]{figure/fit_mbc/STdata4946_1001.pdf}
+    \caption{Fit results on $\mbc$ distributions for each energy point.}
 \label{fig:fit_mbc}
 \end{figure}
 
@@ -114,6 +115,7 @@ After applying all selection criteria, an additional kinematic fit is performed 
     \item Signal side $\lcp$, reconstructed by $p$, $K^-$ and $\pi^+$ is constrained at the $\Lambda_c$ nominal mass value,
     \item Recoil side $\lcm$ is constrained at the $\Lambda_c$ nominal mass value using information of initial four-momentum of $e^+e^-$ collision.
 \end{itemize}
+No cut is applied on the fit quality of the kinematic fit.
 
 In the amplitude analysis, the background contributions are modeled by the data events in the $\mbc$ sideband region, scaled according to the background fractions from the $\mbc$ fit. It is crucial to valid the consistency of the background shape between the $\mbc$ sideband region and signal region. Shapes of $M^2(pK^-)$, $M^2(p\pi^+)$ and $M^2(K^-\pi^+)$ are compared using the data events and cocktail MC samples with signal process vetoed. Figure~\ref{fig:comp_mc_sideband} shows the shape comparison for cocktail MC samples in the $\mbc$ signal and sideband regions. The distributions of $M^2(pK^-)$ and $M^2(p\pi^+)$ in the $\mbc$ signal and sideband regions agree well with each other within uncertainties. Discrepancy is observed in the distribution of $M^2(K^-\pi^+)$. 
 Figure~\ref{fig:comp_datamc_sideband} shows the comparison results between data and cocktail MC in the $\mbc$ sideband region. Visible difference can be observed in the distribution of $M^2(K^-\pi^+)$, which arises from the lack of modelling on $\bar{K}^*$ processes in the cocktail MC samples. In the nominal amplitude analysis, we still trust data and use data events in $\mbc$ sideband region to describe the background. The observed disagreements in the Figure~\ref{fig:comp_mc_sideband}, \ref{fig:comp_datamc_sideband} will be considered for possible variations of the background shape in the study of systematic uncertainties. More details about the source of background are documented in Appendix~\ref{app:bkg_check}.
